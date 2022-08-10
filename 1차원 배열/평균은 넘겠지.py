@@ -7,7 +7,7 @@ for i in range(n):
     sum_all = sum(l[1:])
     avg = sum_all/num
     count = 0
-    for i in range(1,len(l)):
+    for i in range(1, len(l)):
         if l[i] > avg:
             count += 1
     ratio = format(count/num*100, '.3f')

@@ -14,3 +14,5 @@ for i in l:
             score_s = 0
     print(score)
                             
+
+

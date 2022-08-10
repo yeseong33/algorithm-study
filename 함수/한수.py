@@ -13,6 +13,7 @@ def han():
             if 2*b == a+c and a != c or a == b == c:
                 count += 1
     print(count)           
-            
+
+
 
 # cProfile.run("han()")

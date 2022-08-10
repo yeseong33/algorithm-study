@@ -3,8 +3,7 @@
 #         c = 0
 #         for j in range(i):
 #             selfN = 0
-#             selfN += sum(tuple(map(int, str(j)))) + j 
-            
+#             selfN += sum(tuple(map(int, str(j)))) + j  
 #             # for k in range(len(n)):
 #             #     selfN += int(n[k])
             
@@ -15,6 +14,8 @@
 #             print(i)
 
 
+# 9934 = 9934 + 9 + 9+3+4
+# 36
 
 
 
