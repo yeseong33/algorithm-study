@@ -8,7 +8,7 @@ for i in cro:
     if i in s:
         c = s.count(i)
         iLen = len(i)
-        
+    
         if i == 'z=' and c >= 2 and 'dz=' in s:
             c -= s.count('dz=')
         elif i == 'z=' and  s.count('z=') == s.count('dz='):
@@ -21,5 +21,14 @@ print(count)
 
 
 
-## 
-# s = input()
+
+
+
+####
+s = input()
+cro = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z='] 
+
+for i in s:
+    s = s.replace(i,'*')
+
+print(len(s))
