@@ -1,21 +1,21 @@
-# import sys
+import sys
 
-# A, B, V = map(int, sys.stdin.readline().split())
+A, B, V = map(int, sys.stdin.readline().split())
 
-# if V == A:
-#     day = 0
-# elif (V-A) // (A-B) < 1:
-#     day = 1
-# else:
-#     if (V - A) % (A - B) > 0:
-#         day = (V - A) // (A - B) + 1
-#     else:
-#         day = (V - A) // (A - B)
+if V == A:
+    day = 0
+elif (V-A) // (A-B) < 1:
+    day = 1
+else:
+    if (V - A) % (A - B) > 0:
+        day = (V - A) // (A - B) + 1
+    else:
+        day = (V - A) // (A - B)
 
         
-# print(day + 1)
+print(day + 1)
 
-
+##3
 climb, fall, height = map(int, input().split(" "))
 
 day = (height - climb) // (climb - fall)
