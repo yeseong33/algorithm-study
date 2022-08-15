@@ -1,6 +1,6 @@
 def suga(n):
     mini = 0
-    if n // 5 == 0 and n % 3 != 0 or n ==0:
+    if n // 5 == 0 and n % 3 != 0 or n ==7:
         mini = -1 
     elif n % 5 == 0:
         mini = n // 5

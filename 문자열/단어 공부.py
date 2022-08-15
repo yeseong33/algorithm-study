@@ -19,4 +19,3 @@ if a.count(m) > 1:
     print('?')
 else:
     print(alpa[aidx+26])
- 
