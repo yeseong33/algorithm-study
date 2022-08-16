@@ -23,4 +23,6 @@ def fac(n):
 
 n = int(input())
 
-print(fac(n))
+print(fac(n))  
+
+
