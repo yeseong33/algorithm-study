@@ -31,52 +31,52 @@ cProfile.run("so()")
 
 
 
-#######
-def get_prime_array(N: int):
-    # N보다 작은 소수를 모두 출력
+# #######
+# def get_prime_array(N: int):
+#     # N보다 작은 소수를 모두 출력
     
-    if N < 2:
-        return []
-    N = N+1
-    Sieve = [1] * (N // 2) #홀수에 대해서만 Sieve를 구성해서 탐색 범위 감소
-    for i in range(3, int(N ** 0.5)+1, 2): #3부터 시작되는 홀수에 대해서만 대응 N의 소수는 Root(N+1)보다 클 수 없음
-        if Sieve[i // 2] == 1:
-            k = i * i
-            #Sieve[k//2 : : i] = [0] * ((N-k-1) // (2*i) +1)
-            for j in range(k//2, N//2 , i):
-                Sieve[j] = 0
-    return Sieve
+#     if N < 2:
+#         return []
+#     N = N+1
+#     Sieve = [1] * (N // 2) #홀수에 대해서만 Sieve를 구성해서 탐색 범위 감소
+#     for i in range(3, int(N ** 0.5)+1, 2): #3부터 시작되는 홀수에 대해서만 대응 N의 소수는 Root(N+1)보다 클 수 없음
+#         if Sieve[i // 2] == 1:
+#             k = i * i
+#             #Sieve[k//2 : : i] = [0] * ((N-k-1) // (2*i) +1)
+#             for j in range(k//2, N//2 , i):
+#                 Sieve[j] = 0
+#     return Sieve
     
-def get_prime_number(A):
-    # get_prime_array 필요
-    # 정수를 입력 받으면 해당 정수 보다 작은 소수를 출력
+# def get_prime_number(A):
+#     # get_prime_array 필요
+#     # 정수를 입력 받으면 해당 정수 보다 작은 소수를 출력
 
-    if (type(A) == int):
-        A = get_prime_array(A)
+#     if (type(A) == int):
+#         A = get_prime_array(A)
     
-    ans = [2]
-    for i in range(1, len(A)):
-        if A[i] == 1:
-            ans.append(2*i+1)
-    return ans
+#     ans = [2]
+#     for i in range(1, len(A)):
+#         if A[i] == 1:
+#             ans.append(2*i+1)
+#     return ans
 
-    # return [2] + [(2 * i + 1) for i in range(1, n // 2) if save[i]]
+#     # return [2] + [(2 * i + 1) for i in range(1, n // 2) if save[i]]
 
-def Search(prime, n):
-    l,r = 0, len(prime)-1
-    while l<=r:
-        m=(l+r)//2
+# def Search(prime, n):
+#     l,r = 0, len(prime)-1
+#     while l<=r:
+#         m=(l+r)//2
 
-        if prime[m] > n:
-            r = m-1
-        else:
-            l = m+1
-    return l
+#         if prime[m] > n:
+#             r = m-1
+#         else:
+#             l = m+1
+#     return l
 
-import sys
-S = get_prime_number(123456*2)
-while(1):
-    N = int(sys.stdin.readline())
-    if N ==0:
-        break
-    print(Search(S,2*N) - Search(S,N))
+# import sys
+# S = get_prime_number(123456*2)
+# while(1):
+#     N = int(sys.stdin.readline())
+#     if N ==0:
+#         break
+#     print(Search(S,2*N) - Search(S,N))
