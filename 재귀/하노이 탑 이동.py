@@ -11,9 +11,10 @@ def ha(n, start, via, to):
         print(start, to)
         c += 1
 
-# print(2**n-1)
+
+print(2**n-1)
 ha(n, 1, 2, 3)
-print(c)
+
 
 
 # ha(3, 1, 2, 3)
