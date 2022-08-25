@@ -45,6 +45,8 @@ s = star(n)
 show(s, n)
 
 
+
+
 ###
 
 # s = math.log(243,3)

@@ -15,21 +15,13 @@ def rank(n):
             if people[i][0] < people[j][0]:
                 if people[i][1] < people[j][1]:
                     people[i][2] += 1 
-            else:
+            elif people[i][0] > people[j][0]:
                 if people[i][1] > people[j][1]:
-                    people[j][2] += 1 
-    
+                    people[j][2] += 1
     return people
 
 
 
 r = rank(n)
 for i in range(n):
-    if i == n-1:
-        print(r[i][2], end = '')
-    else:
-        print(r[i][2], end = ' ')    
-        
-    
-
-
+    print(r[i][2], end = ' ')    

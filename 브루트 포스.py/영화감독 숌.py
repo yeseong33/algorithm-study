@@ -1,16 +1,16 @@
-# n = int(input())
+n = int(input())
 
 
-# s = [0]
-# i = 666
-# while len(s) != (n+1):
-#     num = str(i)
-#     if "666" in num:
-#        s.append(i)
-#     i += 1
+s = [0]
+i = 666
+while len(s) != (n+1):
+    num = str(i)
+    if "666" in num:
+       s.append(i)
+    i += 1
     
     
-# print(s[n])
+print(s[n])
 
 
 
@@ -59,6 +59,3 @@
 
 
 
-
-num = '1006661'
-print(num.index("666"))

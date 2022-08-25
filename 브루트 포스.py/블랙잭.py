@@ -19,6 +19,5 @@ def black(nums, m):
     
     return maxi
 
-print(black(nums, m))
 print(sum(black(nums, m)))
                 

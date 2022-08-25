@@ -5,6 +5,7 @@ n, m = map(int, sys.stdin.readline().split())
 h = set()
 s = set()
 ans = []
+
 for i in range(n):
     k = sys.stdin.readline().strip()
     h.add(k)

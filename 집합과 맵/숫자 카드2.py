@@ -25,3 +25,5 @@ for i in nums_l_2:
         print(nums_d[i], end = ' ')
     else:
         print(0, end = ' ')
+        
+        
