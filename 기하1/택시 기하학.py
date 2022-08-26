@@ -1,15 +1,6 @@
-from cmath import pi, sqrt
-import math 
+import sys, math
 
-r = int(input())
+n = int(sys.stdin.readline().strip())
 
-
-t = 7/5*r
-
-
-
-u = math.pi * r ** 2
-t = math.pi * t ** 2
-
-print(u)
-print(t)
+print(format(math.pi * n **2, '.6f'))
+print(format(2 * n **2, '.6f'))
