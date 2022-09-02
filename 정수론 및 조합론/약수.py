@@ -9,8 +9,6 @@ n = int(sys.stdin.readline())
 nums = list(map(int, sys.stdin.readline().split()))
 
 
-
-
 N = max(nums) * min(nums)
     
 print(N)
