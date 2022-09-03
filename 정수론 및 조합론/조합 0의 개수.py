@@ -26,16 +26,14 @@ n, k = map(int, sys.stdin.readline().split())
 
 
 p1 = so(n)
-print(p1)
 p2 = so(k)
-print(p2)
 p3 = so(n-k)
-print(p3)
 
 x2 = p1[0] - p2[0] -p3[0]
 x5 = p1[1] - p2[1] -p3[1]
-print(x2, x5)
 ans = min(x2, x5)
 print(ans)
 
 
+# 팩토리얼을 소인수분해 하여 0이 나올 수 있는 경우의
+# 수를 구한다 생각
