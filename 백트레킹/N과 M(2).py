@@ -20,4 +20,3 @@ def loop():
                 l.pop()
 
 loop()
-print(r)
