@@ -17,11 +17,9 @@ def d():
             if oper[i] != 0:
                 oper[i] -= 1
                 ans.append(str(i+1))
-                print(ans, 'append')
                 d()
                 oper[i] += 1
                 ans.pop()
-                print(ans, 'pop')
                 
                 
 
@@ -57,5 +55,3 @@ def print_ans(x):
 d()
 print(max(r))
 print(min(r))
-
-
