@@ -3,14 +3,10 @@ import sys
 sdo = [list(map(int, sys.stdin.readline().split())) for i in range(9)]
 
 num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-c = 0 
 
 
 def make(d):
-    global c
     if d == 9:
-        if c == 1:
-            return 
         for i in range(9):
             k = 0
             for j in range(9):
@@ -29,8 +25,7 @@ def make(d):
                 
         for i in sdo:
             print(' '.join(map(str, i)))
-        exit(0)
-        return             
+        exit(0)             
     
     else:
         

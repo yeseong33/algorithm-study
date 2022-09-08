@@ -3,6 +3,8 @@ import sys
 n, m = map(int, sys.stdin.readline().split())
 l = []
 
+
+
 def dfs():
     if len(l) == m:
         print(' '.join(map(str, l)))
