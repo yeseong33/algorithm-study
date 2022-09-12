@@ -1,4 +1,3 @@
-
 import sys
 
 n, k = map(int, sys.stdin.readline().split())
@@ -6,7 +5,6 @@ n, k = map(int, sys.stdin.readline().split())
 coins = [int(sys.stdin.readline()) for i in range(n)]
 coins.sort(reverse=True)
 count = 0
-print(coins)
 
 for i in coins:
     if k // i != 0:
