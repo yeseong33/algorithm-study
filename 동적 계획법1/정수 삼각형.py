@@ -136,31 +136,5 @@
 # print(max(r.values()))
 
 
-import sys
 
-n = int(input())
-
-nums = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
-
-db = [[0]*(i+1) for i in range(n)]
-
-for i in range(n-1):
-    for j in range(len(nums[i])):
-
-        if i == 0:
-            db[i+1][j] = nums[i][j] + nums[i+1][j]
-            db[i+1][j+1] = nums[i][j] + nums[i+1][j+1]
-            
-        else:
-            if db[i+1][j] < db[i][j] + nums[i+1][j]:
-                db[i+1][j] = db[i][j] + nums[i+1][j]
-            db[i+1][j+1] = db[i][j] +nums[i+1][j+1]
-            
-            
-            
-if n ==1 :
-    print(nums[0][0])
-    
-else:
-    print(max(db[-1]))
     
