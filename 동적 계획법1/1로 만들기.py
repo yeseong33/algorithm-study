@@ -34,13 +34,11 @@ tmp = set()
 c = 0
 
 
-
-
 while 1 not in nums:
     for i in nums:
-        if i % 3 == 0 :
+        if i % 3 == 0:
             tmp.add(i//3)
-        if i % 2 == 0 :
+        if i % 2 == 0:
             tmp.add(i//2)
         if i-1 not in tmp and i-1 > 0:
             tmp.add(i-1)
