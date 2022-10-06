@@ -4,11 +4,11 @@ n = int(input())
 
 nums = list(map(int, sys.stdin.readline().split()))
 count = [1] * n
-
-
+nums = nums[::-1]
+print(nums)
 # answer
 # 18 23 53 60 77 83 85
-
+# 1  1  1  1  1  1  1  
 for i in range(n):
     for j in range(i):
         if nums[i] > nums[j]:
