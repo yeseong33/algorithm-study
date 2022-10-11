@@ -4,11 +4,13 @@ n = int(input())
 
 nums = list(map(int, sys.stdin.readline().split()))
 count = [1] * n
-nums = nums[::-1]
 print(nums)
 # answer
 # 18 23 53 60 77 83 85
 # 1  1  1  1  1  1  1  
+# 10 20 10 30 20 50
+# 1  2  1  3  2   4 
+
 for i in range(n):
     for j in range(i):
         if nums[i] > nums[j]:
@@ -18,5 +20,3 @@ for i in range(n):
 print(count)       
 print(max(count))       
             
-            
-# 다시풀기

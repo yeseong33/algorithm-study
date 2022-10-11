@@ -27,6 +27,9 @@
 
 # # 1 5 2 1 4 3 4 5 2 1
 
+# 7 1 2 3 4 3 2 1 
+
+
 # ans = []
 
 # # maximum = max(nums)
@@ -35,6 +38,7 @@
 # # idx.append(nums_copy.index(maximum))
 # # nums_copy.remove(maximum)
 # # for i in range(k-1):
+
 # #     idx.append(nums_copy.index(maximum)+1+i)
 # #     nums_copy.remove(maximum)
     
@@ -63,10 +67,8 @@ import sys
 n = int(input())
 nums = list(map(int, sys.stdin.readline().split()))
 nums_reverse = nums[::-1]
-# count = [[1, 1] for i in range(n)]
 count = [1]* n
 count_r = [1] * n
-print(count)
 
 for i in range(n):
     for j in range(i):
@@ -74,11 +76,6 @@ for i in range(n):
             if count[i] < count[j] + 1:
                  count[i] = count[j] + 1
 
-# for i in range(n-1, -1, -1):
-#     for j in range(n-1, i+1, -1):
-#         if nums[i] > nums[j]:
-#             if count[i][1] < count[j][1] + 1:
-#                  count[i][1] = count[j][1] + 1
 
 for i in range(n):
     for j in range(i):
@@ -92,16 +89,14 @@ ans = []
 for i in range(n):
     k = count[i] + count_r[i]
     ans.append(k-1)
-print(ans)
 print(max(ans))
-# print(count)
-# ans = []
-# for i in count:
-#     a = i[0]
-#     b = i[1]
-#     ans.append(a+b)
-# print(ans)
-# print(max(ans))
+
                  
 # 1 5 2 1 4 3 4 5 2 1
-# 1 2 5 4 3 4 1 2 5 1 
+
+
+# 1 2 5 4 3 4 1 2 5 1
+ 
+# 1 5 2 1 4 3 4 5 2 1
+# 1 2 2 1 3 2 3 4 2 1 
+
