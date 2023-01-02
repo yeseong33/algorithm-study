@@ -1,6 +1,3 @@
-from re import A
-
-
 a = input()
 b = input()
 a_len = len(a)
@@ -20,7 +17,7 @@ else:
     for i in a:
         small.append(i)
 
-
+c =0 
 #    A C A Y K P
 # C  0 1 0 0 0 0
 # A  1 1 2 0 0 0
@@ -28,8 +25,6 @@ else:
 # C  1 2 2 0 0 3
 # A  1 2 3 0 0 3 
 # K  1 2 3 0 4 3
-
-    
 
 ans = [0] * len(big)
 for i in range(len(small)):
@@ -41,8 +36,4 @@ for i in range(len(small)):
             ans[j] = c + 1
             
 
-
 print(max(ans)) 
-
-
-

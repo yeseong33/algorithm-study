@@ -6,4 +6,3 @@ bag.sort()
 
 value = 0
 
-print(bag)
