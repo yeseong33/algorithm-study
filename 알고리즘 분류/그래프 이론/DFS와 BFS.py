@@ -1,5 +1,5 @@
 import sys
-
+from collections import deque
 n, m, v = map(int, sys.stdin.readline().split())
 
 graph = dict()
@@ -7,10 +7,20 @@ visited = []
 
 for i in range(m):
     a, b = map(int, sys.stdin.readline().split()) 
-    if a not in graph.keys():
+    if a not in graph:
         graph[a] = [b]
-    else:
-        graph[a] = graph[a] + [b]
+    elif b not in graph[a]:
+        graph[a].append(b)
+        graph[a].sort()
+    
+    if b not in graph:
+        graph[b] = [a]
+    elif a not in graph[b]:
+        graph[b].append(a)
+        graph[b].sort()
+        
+
+graph_2 = graph.copy()
 
 # 스택을 이용한 풀이
 def dfsStack(graph, start):
@@ -41,7 +51,31 @@ def dfs(graph, start):
             if node not in visited:
                 dfs(graph, node)
 
-dfs(graph, 1)
-print(visited)
+dfs(graph, v)
 
-print(dfsStack(graph, 1))
+for i in visited:
+    print(i, end = ' ')
+
+print()
+
+
+def bfs(graph, start):
+    
+    visited = []
+    
+    queue = deque([start])
+    
+    while queue:
+        node = queue.popleft()
+        
+        if node not in visited:
+            print(node, end = " ")
+            visited.append(node)
+            if node in graph.keys():
+                for i in graph[node]:
+                    if i not in visited:
+                        queue.append(i)
+
+bfs(graph_2, v)
+
+
