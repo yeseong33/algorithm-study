@@ -96,7 +96,6 @@ while True:
     total_6 = nums[i+1][j] + nums[i+1][j+1] + nums[i][j+1] + nums[i][j+2]
     total_7 = nums[i][j] + nums[i][j+1] + nums[i][j+2] + nums[i+1][j+1]
     total_8 = nums[i][j+1] + nums[i+1][j] + nums[i+1][j+1] + nums[i+1][j+2]
-    print(total_5)
     ans = max(ans, total_1, total_2, total_3, total_4, total_5, total_6, total_7, total_8)
     
     if i+1 == n-1  and j+2 == m-1:

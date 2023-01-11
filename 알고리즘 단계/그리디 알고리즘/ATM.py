@@ -9,9 +9,9 @@ temp = 0
 for i in range(n):
     temp += nums[i]
     ans += temp
-    print(ans)
 print(ans)
 
 # 1 2 3 3 4
 
 # 1 3 6 9 13
+

@@ -29,6 +29,7 @@ while True:
         
     if start == len(nums)-1:
         break
+    
 if lenth == len(arr)+1:
     print(0)
 else:
