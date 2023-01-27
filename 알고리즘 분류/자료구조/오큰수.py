@@ -75,35 +75,21 @@ import sys
 n = int(input())
 
 nums = list(map(int, sys.stdin.readline().split()))
-ans = [-1]
-
-count = 0
-first = nums.pop()
-second = 0
-min = first
-while nums != []:
-    pop = nums.pop()
-    count += 1
-    
-    if pop < min and count >= 3:
-        ans.append(min)
-        min = pop    
-    elif pop < second:
-        ans.append(second)
-    elif pop < first:
-        ans.append(first)
-        second = pop
-    else:
-        ans.append(-1)
-        first = pop
-        
-    print(first, second, min)
-
-ans.reverse()
+nums_c = nums.copy()
+stack = []
+i = 0
 
 for i in range(n):
-    if i == n-1:
-        print(ans[i])
-    else: 
-        print(ans[i], end = ' ')
-     
+    
+
+    while stack and nums[stack[-1]] < nums[i]:
+        nums_c[stack.pop()] = nums[i]
+    stack.append(i)
+
+
+for i in range(n):
+    if nums[i] == nums_c[i]:
+        print('-1', end = ' ')
+    else:
+        print(nums_c[i], end = ' ')
+    
