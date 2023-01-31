@@ -1,48 +1,49 @@
-# # 1. 빈 스택 두개 만듬
-# # 2. 하나는 수열로 만들어 진 것
-# # 3. 하나는 빈 스택
-# # 4. push pop 을 반복하면서 가능한 것인지 확인
+# 1. 빈 스택 두개 만듬
+# 2. 하나는 수열로 만들어 진 것
+# 3. 하나는 빈 스택
+# 4. push pop 을 반복하면서 가능한 것인지 확인
 
-# import sys
-# from collections import deque
+# deque를 이용한 풀이
+import sys
+from collections import deque
 
-# ans = deque()
-# stack = deque()
-# result = []
+ans = deque()
+stack = deque()
+result = []
 
-# n = int(input())
-# flag = 1
-# num = 1
-# count = 0
+n = int(input())
+flag = 1
+num = 1
+count = 0
 
-# for _ in range(n):
-#     k = int(sys.stdin.readline())
-#     ans.append(k)
+for _ in range(n):
+    k = int(sys.stdin.readline())
+    ans.append(k)
     
 
-# while count != 2 * n:
-#     if flag != 0:
-#         pop = ans.popleft()
-#         flag = 0
+while count != 2 * n:
+    if flag != 0:
+        pop = ans.popleft()
+        flag = 0
     
     
-#     if len(stack) == 0 or stack[0] != pop:
-#         stack.appendleft(num)
-#         num += 1
-#         result.append('+')    
-#     elif pop == stack[0]:
-#         result.append('-')
-#         stack.popleft()
-#         flag = 1
+    if len(stack) == 0 or stack[0] != pop:
+        stack.appendleft(num)
+        num += 1
+        result.append('+')    
+    elif pop == stack[0]:
+        result.append('-')
+        stack.popleft()
+        flag = 1
         
-#     count += 1 
+    count += 1 
     
 
-# if result.count('+') == result.count('-'):
-#     for i in result:
-#         print(i)
-# else:
-#     print("NO")
+if result.count('+') == result.count('-'):
+    for i in result:
+        print(i)
+else:
+    print("NO")
 
 # # 1. ans.pop() 을 통해 정해진 수열에서 맨 앞자리 뽑아옴        
 # # 2. 만약 stack 이 비어 있거나 맨 앞의 값이 pop 과 같지 않을경우 --> 다음 오름차순을 push
@@ -55,6 +56,7 @@
 # # 리스트를 사용하면 더 빠르게 풀 수 있었을 것
 
 
+# 리스트를 이용한 풀이
 import sys
 
 n = int(input())

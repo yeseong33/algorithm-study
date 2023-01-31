@@ -16,4 +16,6 @@ def han():
 
 
 
-# cProfile.run("han()")
+import cProfile
+
+cProfile.run("han()")
