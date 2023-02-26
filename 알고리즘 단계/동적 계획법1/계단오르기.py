@@ -2,8 +2,9 @@ import sys
 
 n = int(input())
 
-nums = [int(sys.stdin.readline()) for _ in range(n)]+ [0] * 3
+nums = [int(sys.stdin.readline()) for _ in range(n)]+ [0] * 2
 memo = [0] * (n+2)
+print(nums)
 
 # [10, 30, 35, ]
 
@@ -15,5 +16,3 @@ for i in range(3, n):
     memo[i] = max(memo[i-3]+nums[i]+nums[i-1], memo[i-2]+nums[i])
 
 print(memo[n-1])
-
-## 공유기설치

@@ -12,9 +12,7 @@ def hap(idx):
     
     
     if total == s and idx != 0:
-        
         count += 1
-        print(total, idx)
     
     
     for i in range(idx, n):

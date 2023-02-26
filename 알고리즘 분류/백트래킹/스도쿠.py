@@ -87,52 +87,52 @@
 # dfs(0)
 
                 
-# import sys
+import sys
 
 
-# sdo = [list(map(int, sys.stdin.readline().split())) for _ in range(9)]
+sdo = [list(map(int, sys.stdin.readline().split())) for _ in range(9)]
 
-# row = [[False] * 9 for _ in range(9)]
-# col = [[False] * 9 for _ in range(9)]
-# box = [[False] * 9 for _ in range(9)]
-
-
-# for i in range(9):
-#     for j in range(9):
-#         if sdo[i][j]:
-#             row[i][sdo[i][j]-1] = True
-#             col[i][sdo[i][j]-1] = True
-#             box[i//3*3 + j//3][sdo[i][j]-1] = True
+row = [[False] * 9 for _ in range(9)]
+col = [[False] * 9 for _ in range(9)]
+box = [[False] * 9 for _ in range(9)]
 
 
-# def BT(i, j):
+for i in range(9):
+    for j in range(9):
+        if sdo[i][j]:
+            row[i][sdo[i][j]-1] = True
+            col[i][sdo[i][j]-1] = True
+            box[i//3*3 + j//3][sdo[i][j]-1] = True
+
+
+def BT(i, j):
     
-#     # 종료 조건
-#     if i == 9:
-#         for i in sdo:
-#             print(*i)
-#         exit(0)
+    # 종료 조건
+    if i == 9:
+        for i in sdo:
+            print(*i)
+        exit(0)
      
-#     # 거르기 --> 후보 선정
-#     if sdo[i][j]:
-#         BT(i+(j+1)//9, (j+1)%9)
+    # 거르기 --> 후보 선정
+    if sdo[i][j]:
+        BT(i+(j+1)//9, (j+1)%9)
     
-#     # 후보 선정 및 재귀를 통해 넘겨줌
-#     for k in range(9):
-#         if row[i][k] or col[i][k] or box[i//3*3 + j//3][k]:
-#             continue
-#         sdo[i][j] = k+1
-#         row[i][k] = True
-#         col[i][k] = True
-#         box[i//3 * 3 + j//3][k] = True
-#         BT(i+(j+1)//9, (j+1)%9)
-#         sdo[i][j] = 0
-#         row[i][k] = False
-#         col[i][k] = False
-#         box[i//3 * 3 + j//3][k] = False
+    # 후보 선정 및 재귀를 통해 넘겨줌
+    for k in range(9):
+        if row[i][k] or col[i][k] or box[i//3*3 + j//3][k]:
+            continue
+        sdo[i][j] = k+1
+        row[i][k] = True
+        col[i][k] = True
+        box[i//3 * 3 + j//3][k] = True
+        BT(i+(j+1)//9, (j+1)%9)
+        sdo[i][j] = 0
+        row[i][k] = False
+        col[i][k] = False
+        box[i//3 * 3 + j//3][k] = False
         
 
-# BT(0, 0)
+BT(0, 0)
 
 
                 
