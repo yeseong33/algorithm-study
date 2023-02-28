@@ -82,56 +82,112 @@
     
                        
                        
-## 시간초과로 g1, g2를 리스트의 인덱스를 사용하는 방식으로 바꿈 
+## 시간초과로 g를 리스트의 인덱스를 사용하는 방식으로 바꿈 
+## 여전히 시간 초과 남
                     
+# import sys
+# sys.setrecursionlimit(10 ** 6)
+
+# t = int(input())
+
+# def is_promising(g):
+#     g1_list = []
+#     g2_list = []
+
+#     for i in range(1, v+1):
+#         if g[i]:
+#             g1_list.append(i)
+#         else:
+#             g2_list.append(i)
+
+#     for i in g1_list:
+#         k = graph[i]
+#         for j in g1_list:
+#             if j in k:
+#                 return False
+ 
+#     for i in g2_list:
+#         k = graph[i]
+#         for j in g2_list:
+#             if j in k:
+#                 return False
+    
+#     return True
+
+
+# def d(g):
+    
+#     if is_promising(g):
+#         return True
+    
+#     for i in range(2, v+1):
+#         if not g[i]:
+#             # visited[i] = 1
+
+#             k = graph[i]
+#             for j in k:
+#                 g[j] = 1
+#             if is_promising(g):
+#                 return True
+#             for j in k:
+#                 g[j] = 0
+    
+#     return False
+
+# for _ in range(t):
+#     v, e = map(int, sys.stdin.readline().split())
+#     graph = [0]+[[] for i in range(v)]
+
+#     for i in range(e):
+#         a,b = map(int, sys.stdin.readline().split())
+#         graph[a].append(b)
+#         graph[b].append(a)
+
+#     g = [0] * (v+1)
+
+    
+#     for i in range(2, v+1):
+#         if i in graph[1]:
+#             g[i] = 1
+            
+#     # visited = [0] * (v+1)
+#     # visited[1] =1 
+    
+#     a = False
+
+#     if d(g):
+#         print('YES')
+#     else:
+#         print('NO')
+
+
+                    
+# 1
+# 4 3
+# 1 4
+# 4 3
+# 3 2 
+
+# 방식을 바꿈
+# dfs의 방식으로 각 노드의 집합을 표현
+
 import sys
 sys.setrecursionlimit(10 ** 6)
-
+def dfs(i, group):
+    visited[i] =  group
+    
+    for at in graph[i]:
+        if not visited[at]:
+            a = dfs(at, -group)
+            if not a:
+                return False  
+        
+        elif visited[at] == visited[i]:
+            return False
+    
+    return True     
+  
 t = int(input())
-
-def is_promising(g):
-    g1_list = []
-    g2_list = []
-
-    for i in range(1, v+1):
-        if g[i]:
-            g1_list.append(i)
-        else:
-            g2_list.append(i)
-            
-    for i in g1_list:
-        k = graph[i]
-        for j in g1_list:
-            if j in k:
-                return False
- 
-    for i in g2_list:
-        k = graph[i]
-        for j in g2_list:
-            if j in k:
-                return False
-    
-    return True
-
-
-def d(g):
-    
-    if is_promising(g):
-        return True
-    
-    for i in range(2, v+1):
-        if not g[i]:
-            # visited[i] = 1
-
-            k = graph[i]
-            for j in k:
-                g[j] = 1
-            if is_promising(g):
-                return True
-            for j in k:
-                g[j] = 0
-    
-    return False
 
 for _ in range(t):
     v, e = map(int, sys.stdin.readline().split())
@@ -142,27 +198,19 @@ for _ in range(t):
         graph[a].append(b)
         graph[b].append(a)
 
-    g = [0] * (v+1)
+    visited = [0] * (v+1)
 
-    
-    for i in range(2, v+1):
-        if i in graph[1]:
-            g[i] = 1
-            
-    # visited = [0] * (v+1)
-    # visited[1] =1 
-    
-    a = False
+    for i in range(1, v+1):
+        if not visited[i]:
+            result = dfs(i, 1) 
+            if not result:
+                break
 
-    if d(g):
+    if result:
         print('YES')
     else:
         print('NO')
 
 
-                    
-# 1
-# 4 3
-# 1 4
-# 4 3
-# 3 2 
+        
+        
