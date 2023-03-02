@@ -1,30 +1,36 @@
 import sys
+sys.setrecursionlimit(10 ** 5)
 
-n, m = map(int, sys.stdin.readline().split())
+n ,m = map(int, sys.stdin.readline().split())
 
-maze = [[0] *(m+1)]
+maze = [[0] * (m+1)]
+
 for i in range(n):
     k = [0] + list(map(int, sys.stdin.readline().split()))
     maze.append(k)
     
-ans = [[0] * (m+1) for i in range(n+1)]
-D = [(1, 0), (0, 1), (1, 1)] 
+visited = [[-1] * (m+1) for i in range(n+1)]
 
-def dp(maze, ans, x, y):
+dir = [(1, 0), (0, 1), (1, 1)]
+
+def dp(x, y):
     
     if x == n and y == m:
-        ans[n][m] = maze[n][m]
-        return 
+        visited[x][y] = maze[x][y]
+        return
     
+    if visited[x][y] != -1:
+        return
     
-    for dx, dy in D:
-        nx = x + dx
-        ny = y + dy
+    for i in range(3):
+        nx = x + dir[i][0]
+        ny = y + dir[i][1]
+
         
         if 1 <= nx <= n and 1 <= ny <= m:
-            dp(maze, ans, nx, ny)
-            ans[x][y] += maze[nx][ny]
-    
-    
-dp(maze, ans , 1, 1)
-print(ans[1, ])
+            
+                dp(nx, ny)
+                visited[x][y] = max(visited[x][y], maze[x][y]+ visited[nx][ny])
+                
+dp(1, 1)
+print(visited[1][1])
