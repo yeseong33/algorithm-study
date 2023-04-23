@@ -1,0 +1,47 @@
+import sys
+
+n = int(input())
+
+arr = [list(map(int, input().split())) for _ in range(n)]
+a1, a2 = [], []
+for i in range(n):
+    for j in range(n):
+        a1.append(arr[i][0] + arr[j][1])
+        a2.append(arr[i][2] + arr[j][3])
+
+a1.sort()
+a2.sort()
+
+
+def point(a1, a2):
+    p1 = 0
+    a1_lenth = len(a1)
+    p2 = a1_lenth-1
+    count = 0 
+    
+    while p1 < a1_lenth-1 and p2 >= 0:
+        sum = a1[p1] + a2[p2]
+        if sum == 0:
+            # 두개 이상 겹치는 경우
+            nextP1 = p1 +1
+            nextP2 = p2 -1
+            while nextP1 <a1_lenth and a1[p1] == a1[nextP1]:
+                nextP1 += 1
+            while nextP2 >= 0 and a2[p2] == a2[nextP2]:
+                nextP2 -= 1
+            count +=  (nextP1 - p1) * (p2 - nextP2)
+            
+            p1, p2 = nextP1, nextP2
+                
+        elif sum > 0:
+            p2 -= 1
+        else:
+            p1 += 1
+    
+    
+    return count
+
+
+c  = point(a1, a2)
+print(c)
+
