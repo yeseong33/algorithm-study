@@ -32,7 +32,7 @@ def findAir(visited):
             visited[i][0] = 1
             visited[i][m-1] = 1
                 
-    return air
+    return air, visited
 
 # 2차원 리스트의 모든 원소가 0인지 확인
 def check_zero(chez):
@@ -46,12 +46,13 @@ def check_zero(chez):
 
 # bfs 이용
 def bfs():
+
     # 방문처리
-    visited = [[0] * m for i in range(n)]
+    v = [[0] * m for i in range(n)]
+    # 비어있는 공간을 받음
+    air, visited = findAir(v)
     # 큐
     q = deque()
-    # 비어있는 공간을 받음
-    air = findAir(visited)
     # 현재 단계에서 치즈가 몇개 있는지 확인
     chez_count = 0
     # 공기가 있는 위치값을 초기 q에 할당
@@ -88,7 +89,6 @@ while not check_zero(chez):
     cc = bfs()
     # 시간 증가
     count_time += 1
-
 # 값 출력
 print(count_time)
 print(cc)
