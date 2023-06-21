@@ -2,17 +2,18 @@ import sys
 
 n, m = map(int, sys.stdin.readline().split())
 
-arr = list(map(int, sys.stdin.readline().split()))
-nums = [0]
-k = 0 
+nums = list(map(int, sys.stdin.readline().split()))
 
-for i in arr:
-    k += i
-    nums.append(k)
+# 구간합 구해놓기
+nums_hap = [0] * (n + 1)
+total = 0
+
+for i in range(1, n+1):
+    total += nums[i-1]
+    nums_hap[i] = total
+
+print(nums_hap)
 
 for _ in range(m):
-     i, j = map(int, sys.stdin.readline().split())
-     k = nums[j] - nums[i-1]
-     print(k)
-     
-        
+    i, j = map(int, sys.stdin.readline().split())
+    print(nums_hap[j] - nums_hap[i-1])

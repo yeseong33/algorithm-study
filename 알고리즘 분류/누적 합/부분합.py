@@ -1,36 +1,28 @@
 import sys
 
 n, s = map(int, sys.stdin.readline().split())
-arr = list(map(int, sys.stdin.readline().split()))
-nums = [0]
-k = 0
-lenth = len(arr)+1
+
+nums = list(map(int, sys.stdin.readline().split()))
+
+hap = [0] * (n+1)
+total = 0
+
+for i in range(1, n+1):
+    total += nums[i-1]
+    hap[i] = total
+
 start = 0
-end = 0
+end = 1
+min_len = 10**9 + 1
 
-# 5 1 3 5 10 7  4  9  2  8
-# 0 5 6 9 14 24 31 35 44 46 54
-
-for i in arr:
-    k += i
-    nums.append(k)
-
-
-while True:
-    gap = nums[end] - nums[start]
-    if gap >= s:
-        if lenth > end - start:
-            lenth = end - start
+while end < len(hap):
+    value = hap[end] - hap[start]
+    
+    if value >= s:
+        if min_len > end - start:
+            min_len = end -start
         start += 1
-    elif end == len(nums)-1:
-        start += 1
-    elif gap < s:
+    else:
         end += 1
         
-    if start == len(nums)-1:
-        break
-    
-if lenth == len(arr)+1:
-    print(0)
-else:
-    print(lenth)
+print(min_len)
