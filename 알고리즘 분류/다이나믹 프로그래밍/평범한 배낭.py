@@ -123,7 +123,7 @@ for _ in range(n):
     for i in range(k, 0, -1):
         if  w > i: continue
         bag[i] = max(v + bag[i-w], bag[i])
-        print(bag)
+        print(bag )
 print(bag[-1])
 
         

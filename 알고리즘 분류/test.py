@@ -1,35 +1,31 @@
-visited = []
-max_k = 0
-s = ''
-def bt(number, k, idx):
-    global max_k, s
+def solution(N):
     
-    if len(s) == len(number) - k:
-        tmp = int(s)
-        print(visited)
-        if tmp > max_k:
-            max_k = tmp
-        return
-    
-    
-    for i in range(idx, len(number)):
-        if i not in visited:
-            visited.append(i)
-            s += number[i]
-            bt(number, k, i+1)
-            visited.pop()
-            s = s[:len(s)-1]
+    nums = []
 
-            
-
-
-def solution(number, k):
-    global max_k
-    
-    bt(number, k, 0)
-    print(max_k)
-    
-    answer = ''
-    return answer
-
-solution("1231234", 3)
+    while N != 1:
+        a = N//2
+        b = N%2
+        nums.append(b)
+        N = a
+    nums.append(N)
+    nums.reverse()
+    print(nums)
+    lens = 0
+    i = 0
+    while i < len(nums):
+        if nums[i] == 1:
+            i += 1
+            count = 0
+            t = False
+            for _ in range(len(nums)-i):
+                if nums[i] == 1:
+                    t = True
+                    break
+                count += 1
+                i += 1
+            if t:
+                if count > lens:
+                    lens = count
+    print(count)
+    print(lens)
+solution(1041)

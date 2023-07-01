@@ -24,5 +24,8 @@ while end < len(hap):
         start += 1
     else:
         end += 1
-        
-print(min_len)
+
+if min_len == 10 ** 9 +1:
+    print(0)
+else:
+    print(min_len)

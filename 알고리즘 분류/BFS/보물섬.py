@@ -38,7 +38,8 @@ tet = 0
 
 for i in range(n):
     for j in range(m):
-        tet = max(tet, bfs(i, j) )
+        if Map[i][j] == "L":
+            tet = max(tet, bfs(i, j) )
 print(tet)             
                     
                     

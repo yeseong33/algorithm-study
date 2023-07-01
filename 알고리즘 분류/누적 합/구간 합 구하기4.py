@@ -12,7 +12,6 @@ for i in range(1, n+1):
     total += nums[i-1]
     nums_hap[i] = total
 
-print(nums_hap)
 
 for _ in range(m):
     i, j = map(int, sys.stdin.readline().split())
