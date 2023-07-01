@@ -12,7 +12,6 @@ for i in range(k):
 
 l = int(input())
 
-move = [0] * 10002
 
 for i in range(l):
     k = list(sys.stdin.readline().split())
