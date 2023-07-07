@@ -33,7 +33,7 @@ for i in range(m):
     if a > b:
         cicle[a] = b
     else:
-        cicle[b] = b
+        cicle[b] = a
         
         
     total += c

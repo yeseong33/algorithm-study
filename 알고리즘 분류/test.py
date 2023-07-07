@@ -1,31 +1,64 @@
-def solution(N):
-    
-    nums = []
+n = 0
+k = []
+visited = [0] *n
+pa = []
+ans = []
 
-    while N != 1:
-        a = N//2
-        b = N%2
-        nums.append(b)
-        N = a
-    nums.append(N)
-    nums.reverse()
-    print(nums)
-    lens = 0
-    i = 0
-    while i < len(nums):
-        if nums[i] == 1:
-            i += 1
+def solution(S):
+    global n, k, visited, pa, ans
+    nums = list(S)
+    n = len(nums)
+    visited = [0] *n
+    dfs(S)
+    if ans == []:
+        ttt = '0'
+    else:
+        ttt = str(max(ans))
+    return ttt
+
+def isP(s):
+    mi = len(s)
+    if mi % 2 == 0:
+        a_h = s[:mi//2]
+        a_t = s[mi//2:]
+        a_t.reverse()
+        if a_h == a_t:
+            return True
+    else:
+        a_h = s[:mi//2]
+        m = s[mi//2]
+        a_t = s[mi//2+1:]
+        a_t.reverse()
+        if a_h == a_t:
+            return True
+    return False
+
+def dfs(ss):
+
+    if len(k) > n:
+        return
+    else:
+        if isP(k):
+            s = ''
             count = 0
-            t = False
-            for _ in range(len(nums)-i):
-                if nums[i] == 1:
-                    t = True
-                    break
-                count += 1
-                i += 1
-            if t:
-                if count > lens:
-                    lens = count
-    print(count)
-    print(lens)
-solution(1041)
+            for i in k:
+                if s == '' and i == '0':
+                    count += 1
+                    continue
+                else:
+                    s += i
+            s_len = len(s)                
+            s = s[:s_len-count]
+            if s != '':
+                ans.append(int(s))
+
+    for i in range(n):
+        if not visited[i]:
+            k.append(ss[i])
+            visited[i] = 1
+            dfs(ss)
+            visited[i] = 0
+            k.pop()
+
+s = solution('0103112')
+print(s)
