@@ -19,7 +19,6 @@ for i in range(n):
     x = a_10
     y = a_least
     board[x][y] = [a, 1, b]
-    print(x, y, a)
 
 for i in range(m):
     a, b = map(int, sys.stdin.readline().split())
@@ -49,9 +48,14 @@ def bfs(v):
             j = 10
         
         # 자기 위치가 특수할 경우
-        if board[i][j][1] == 1:
+        while board[i][j][1] == 1:
             visited[i][j] = 1
             value = board[i][j][2]
+            i = value//10 + 1
+            j = value%10
+            if j == 0:
+                i -= 1
+                j = 10
             
         # 게임이 끝났는지 판단
         if value == 100:

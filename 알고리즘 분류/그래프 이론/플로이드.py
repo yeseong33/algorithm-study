@@ -1,5 +1,5 @@
 import sys
-INF = int(10e1)
+INF = int(10e9)
 n = int(sys.stdin.readline().strip())
 m = int(sys.stdin.readline().strip())
 

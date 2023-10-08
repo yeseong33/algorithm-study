@@ -12,6 +12,7 @@ for i in range(k):
 
 l = int(input())
 
+move = []
 
 for i in range(l):
     k = list(sys.stdin.readline().split())

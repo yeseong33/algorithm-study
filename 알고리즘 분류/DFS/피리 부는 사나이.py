@@ -33,23 +33,15 @@ def dfs(x, y, p):
         if visited[x][y] == p:
             count += 1
             po += 1
-            for tt in visited:
-                print(*tt)
-            print()
         elif visited[x][y] != p:
             po += 1
         return
 
     if not visited[x][y]:
-        # for tt in visited:
-        #     print(*tt)
-        # print()
         visited[x][y] = p
         ni, nj = move(x, y)
         dfs(ni, nj, p)
             
-                
-# visited[0][0] = 1
 for i in range(n):
     for j in range(m):
         dfs(i, j, po)
