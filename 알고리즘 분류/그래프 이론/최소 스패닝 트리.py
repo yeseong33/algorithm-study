@@ -15,6 +15,7 @@ for i in range(m):
 
 graph.sort(key= lambda x: x[2])
 cicle = [i for i in range(n+1)]
+
 total = 0
 count = 0
 
@@ -34,7 +35,6 @@ for i in range(m):
         cicle[a] = b
     else:
         cicle[b] = a
-        
         
     total += c
 
