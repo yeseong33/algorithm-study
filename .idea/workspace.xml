@@ -34,6 +34,7 @@
   "keyToString": {
     "Application.AC.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.괄호의값.executor": "Run",
     "Application.두수의합.executor": "Run",
     "Application.방번호.executor": "Run",
     "Application.쇠막대기.executor": "Run",
@@ -66,7 +67,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.쇠막대기">
+  <component name="RunManager" selected="Application.괄호의값">
     <configuration name="좋은단어" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="스택활용.좋은단어" />
       <module name="algorithm" />
@@ -93,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="카드2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="큐.카드2" />
+    <configuration name="회전하는큐" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="덱.회전하는큐" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="큐.*" />
+          <option name="PATTERN" value="덱.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="회전하는큐" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="덱.회전하는큐" />
+    <configuration name="괄호의값" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="스택활용.괄호의값" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="덱.*" />
+          <option name="PATTERN" value="스택활용.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -212,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.괄호의값" />
         <item itemvalue="Application.쇠막대기" />
         <item itemvalue="Application.좋은단어" />
         <item itemvalue="Application.AC" />
         <item itemvalue="Application.회전하는큐" />
-        <item itemvalue="Application.카드2" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +240,7 @@
       <workItem from="1724228986582" duration="8657000" />
       <workItem from="1724285640281" duration="6745000" />
       <workItem from="1724294514647" duration="11966000" />
-      <workItem from="1724370998203" duration="30752000" />
+      <workItem from="1724370998203" duration="32420000" />
     </task>
     <servers />
   </component>
