@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b629d271-a771-4d84-addf-5ce2b527810a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/java/덱/AC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +36,7 @@
     "Application.Main.executor": "Run",
     "Application.두수의합.executor": "Run",
     "Application.방번호.executor": "Run",
+    "Application.쇠막대기.executor": "Run",
     "Application.스택수열.executor": "Run",
     "Application.요세푸스문제.executor": "Run",
     "Application.제로.executor": "Run",
@@ -66,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.좋은단어">
+  <component name="RunManager" selected="Application.쇠막대기">
     <configuration name="좋은단어" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="스택활용.좋은단어" />
       <module name="algorithm" />
@@ -80,12 +80,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="큐" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="큐.큐" />
+    <configuration name="쇠막대기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="스택활용.쇠막대기" />
       <module name="algorithm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="큐.*" />
+          <option name="PATTERN" value="스택활용.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -212,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.쇠막대기" />
         <item itemvalue="Application.좋은단어" />
         <item itemvalue="Application.AC" />
         <item itemvalue="Application.회전하는큐" />
         <item itemvalue="Application.카드2" />
-        <item itemvalue="Application.큐" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +239,7 @@
       <workItem from="1724228986582" duration="8657000" />
       <workItem from="1724285640281" duration="6745000" />
       <workItem from="1724294514647" duration="11966000" />
-      <workItem from="1724370998203" duration="28552000" />
+      <workItem from="1724370998203" duration="30752000" />
     </task>
     <servers />
   </component>
