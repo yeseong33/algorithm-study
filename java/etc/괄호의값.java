@@ -1,4 +1,4 @@
-package 스택활용;
+package etc;
 
 import java.io.BufferedReader;
 import java.io.IOException;

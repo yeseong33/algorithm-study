@@ -1,10 +1,8 @@
-package 스택활용;
+package etc;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.Stack;
 
 public class 쇠막대기 {
