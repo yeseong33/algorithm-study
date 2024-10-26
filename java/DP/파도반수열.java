@@ -1,8 +1,6 @@
 package DP;
 
 
-
-
 import java.io.*;
 
 
@@ -51,7 +49,6 @@ public class 파도반수열 {
         makeWaves();
         printResult();
     }
-
 
 
     public static void main(String[] args) throws IOException {
